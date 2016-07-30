@@ -2,9 +2,22 @@ doctype html
 html
   head
     title Work Calendar
+    meta charset="utf-8"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1" name="viewport"
+    meta content="Krzysztof Wawer" name="author"
     = csrf_meta_tags
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "reload"
     = javascript_include_tag "application", "data-turbolinks-track": "reload"
   body
-    = yield
-
+    nav.navbar.navbar-inverse
+      .container
+        .navbar-header
+          a.navbar-brand href="#" Work Days Calendar
+    .container
+      .row
+        .col-xs-6.col-sm-3
+        .col-xs-12.col-sm-9
+          .row
+            .col-xs-12
+              = yield
