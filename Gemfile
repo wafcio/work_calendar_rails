@@ -35,6 +35,7 @@ gem "bootstrap-sass"
 gem "slim-rails"
 gem "fullcalendar-rails"
 gem "momentjs-rails"
+gem "holidays"
 
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console

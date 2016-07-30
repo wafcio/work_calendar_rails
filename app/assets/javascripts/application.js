@@ -19,5 +19,5 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
-  $("#calendar").fullCalendar({});
+  $("#calendar").fullCalendar({ events: "/events", firstDay: 1 });
 });
