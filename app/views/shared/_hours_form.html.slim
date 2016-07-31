@@ -1,0 +1,38 @@
+= form_tag "#", id: "calculate_form" do
+  .form-group
+    = label_tag "all_business_days", "Business Days (pn - pt)"
+  .form-group.row
+    .col-xs-6
+      = text_field_tag "all_business_days", nil, class: "form-control", disabled: true
+    .col-xs-6
+      .input-group
+        = text_field_tag "all_business_hours", nil, class: "form-control", disabled: true
+        .input-group-addon h
+
+  .form-group
+    = label_tag "holidays", "Holidays"
+  .form-group.row
+    .col-xs-6
+      = text_field_tag "holidays", nil, class: "form-control"
+    .col-xs-6
+      .input-group
+        = text_field_tag "business_hours_in_holidays", nil, class: "form-control", disabled: true
+        .input-group-addon h
+
+  hr
+  .form-group
+    = label_tag "business_days", "Business Days (with holidays)"
+  .form-group.row
+    .col-xs-6
+      = text_field_tag "business_days", nil, class: "form-control", disabled: true
+    .col-xs-6
+      .input-group
+        = text_field_tag "business_hours", nil, class: "form-control", disabled: true
+        .input-group-addon h
+
+  .form-group
+    = label_tag "extended_business_hours", "Extended Business Hours"
+    = text_field_tag "extended_business_hours", nil, class: "form-control", disabled: true
+  = submit_tag "Calculate", class: "btn btn-success btn-block"
+
+br.visible-xs

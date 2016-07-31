@@ -1,14 +1,13 @@
+require "business_days"
+
 class EventsController < ApplicationController
   def index
-    from = Date.parse(params[:start])
-    to = Date.parse(params[:end])
+    business_days = BusinessDays.new(params[:start], params[:end], :pl)
 
-    events = Holidays.between(from, to, :pl).each do |event|
-      event[:title] = event[:name]
-      event[:start] = event[:date]
-      event[:allDay] = true
-    end
-
-    render json: events
+    render json: {
+      events: business_days.events,
+      month: business_days.current_month,
+      business_days: business_days.business_days
+    }
   end
 end

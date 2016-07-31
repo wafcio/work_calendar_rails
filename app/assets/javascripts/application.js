@@ -17,7 +17,3 @@
 //= require moment
 //= require fullcalendar
 //= require_tree .
-
-$(document).on('turbolinks:load', function() {
-  $("#calendar").fullCalendar({ events: "/events", firstDay: 1 });
-});
